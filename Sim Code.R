@@ -84,5 +84,7 @@ meropenem <- df %>%
          crcl_dose  = factor(crcl_dose, levels = c("500mg q24", "500mg q12", "1g q12", "1g q8"))) %>% 
   mutate(mero_dose_conc = egfr_dose == crcl_dose)
 
-meropenem %>% tbl_summary(include = c(egfr_dose), by = crcl_dose)
+meropenem %>% tbl_summary(include = c(egfr_dose), by = crcl_dose,
+                          label = list(egfr_dose ~ "Meropenem Dose by eGFR BSAadj")) %>% 
+  modify_caption("**Meropenem Dose by CrCl**")
 
