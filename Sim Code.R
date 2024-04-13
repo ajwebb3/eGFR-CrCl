@@ -85,3 +85,4 @@ meropenem <- df %>%
   mutate(mero_dose_conc = egfr_dose == crcl_dose)
 
 meropenem %>% tbl_summary(include = c(egfr_dose), by = crcl_dose)
+
